@@ -1,7 +1,6 @@
 package Config;
 
-import entity.Customer;
-import entity.IDCard;
+import entity.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -19,7 +18,9 @@ public class FactoryForConfigration {
         Configuration configuration = new Configuration().configure();
 
         configuration.addAnnotatedClass(Customer.class);
-        configuration.addAnnotatedClass(IDCard.class);
+        configuration.addAnnotatedClass(Order.class);
+        configuration.addAnnotatedClass(OrderDetail.class);
+        configuration.addAnnotatedClass(Item.class);
 
          sessionFactory = configuration.buildSessionFactory();
 
